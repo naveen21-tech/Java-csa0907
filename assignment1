@@ -1,1 +1,17 @@
+# Java CSA0907 – Assignment 1
 
+**Student:** MS Naveen  
+**Register No.:** 192371002
+
+The assignment submission files are available in the repository root:
+- Assignment1_Task01.md through Assignment1_Task12.md — task-wise answers.
+- Assignment1_ParkingFacility.java — parking slot allocation and release.
+- Assignment1_FeeDemo.java — inheritance, polymorphism and charging fee demonstration.
+- Assignment1_ParkingSystem.java — integrated parking system with passes and pricing rules.
+
+Compile Java examples with Java 17+:
+```bash
+javac Assignment1_ParkingFacility.java && java ParkingFacility
+javac Assignment1_FeeDemo.java && java FeeDemo
+javac Assignment1_ParkingSystem.java && java ParkingSystem
+```
