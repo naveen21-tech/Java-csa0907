@@ -1,0 +1,6 @@
+interface Chargeable { double chargingFee(int kWh); }
+abstract class Vehicle {private final String regNo;Vehicle(String r){if(r==null||r.isBlank())throw new IllegalArgumentException();regNo=r;}public String getRegNo(){return regNo;}protected abstract double rate();public double calculateFee(int minutes){if(minutes<0)throw new IllegalArgumentException();return ((minutes+59)/60)*rate();}}
+class TwoWheeler extends Vehicle {TwoWheeler(String r){super(r);}protected double rate(){return 10;}}
+class Car extends Vehicle {Car(String r){super(r);}protected double rate(){return 30;}}
+class ElectricCar extends Car implements Chargeable {ElectricCar(String r){super(r);}public double chargingFee(int k){if(k<0)throw new IllegalArgumentException();return k*12.0;}}
+public class FeeDemo {public static void main(String[] a){Vehicle[] v={new TwoWheeler("TN01A1"),new Car("TN02B2"),new ElectricCar("TN03C3")};for(Vehicle x:v){double fee=x.calculateFee(130);if(x instanceof Chargeable)fee+=((Chargeable)x).chargingFee(10);System.out.println(x.getRegNo()+" Rs "+fee);}}}
